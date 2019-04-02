@@ -45,10 +45,43 @@
             			<groupId>com.spotify</groupId>
             			<artifactId>docker-maven-plugin</artifactId>
             			<version>1.0.0</version>
+				<executions>
+					<execution>
+						<id>build-image</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				        <execution>
+						<id>image-tag</id>
+						<phase>package</phase>
+						<goals>
+							<goal>tag</goal>
+						</goals>
+						<configuration>
+							<image>192.168.203.164/mavenimagetest</image>	
+							<newName>192.168.203.164/mavenimagetest</newName>
+						</configuration>
+					</execution>
+					<execution>
+						<id>package-push</id>
+						<phase>package</phase>
+						<goals>
+							<goal>push</goal>
+						</goals>
+						<configuration>
+							<imageName>192.168.203.164/mavenimagetest</imageName>
+						</configuration>
+					</execution>
+				</executions>				
             			<configuration>
-                			<imageName>mavenimagetest</imageName>
+					<forceTags>true</forceTags>
+                			<imageName>192.168.203.164/mavenimagetest</imageName>
+					<registry>192.168.203.164</registry>
                 			<baseImage>openjdk:8-alpine</baseImage>
                 			<maintainer>13688862005@163.com</maintainer>
+					<workdir>/ROOT</workdir>
                 			<entryPoint>["java", "-jar", "${project.build.finalName}.jar"]</entryPoint>
 					<dockerHost>http://192.168.203.116:2375</dockerHost>
                 			<resources>
