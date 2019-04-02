@@ -13,7 +13,7 @@ public class IndexController {
 
     @GetMapping("/test")
     public String index(){
-        return "who are you? don't Swimming , please work hard";
+        return "go go go ? don't Swimming , please work hard";
     }
 
 }
