@@ -60,8 +60,8 @@
 							<goal>tag</goal>
 						</goals>
 						<configuration>
-							<image>192.168.203.164/mavenimagetest</image>	
-							<newName>192.168.203.164/mavenimagetest</newName>
+							<image>192.168.203.164/yunwei-test</image>	
+							<newName>192.168.203.164/yunwei-test</newName>
 						</configuration>
 					</execution>
 					<execution>
@@ -71,13 +71,13 @@
 							<goal>push</goal>
 						</goals>
 						<configuration>
-							<imageName>192.168.203.164/mavenimagetest</imageName>
+							<imageName>192.168.203.164/yunwei-test</imageName>
 						</configuration>
 					</execution>
 				</executions>				
             			<configuration>
 					<forceTags>true</forceTags>
-                			<imageName>192.168.203.164/mavenimagetest</imageName>
+                			<imageName>192.168.203.164/yunwei-test</imageName>
 					<registry>192.168.203.164</registry>
                 			<baseImage>openjdk:8-alpine</baseImage>
                 			<maintainer>13688862005@163.com</maintainer>
