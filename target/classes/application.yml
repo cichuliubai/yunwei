@@ -1,0 +1,10 @@
+# Tomcat
+server:
+  port: 60000
+  servlet:
+    context-path: /yunwei
+
+
+
+
+
